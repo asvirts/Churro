@@ -19,17 +19,6 @@ namespace Churro
 			var url = Environment.GetEnvironmentVariable("SUPABASE_URL");
 			var key = Environment.GetEnvironmentVariable("SUPABASE_KEY");
 
-			var options = new SupabaseOptions
-			{
-				AutoRefreshToken = true,
-				AutoConnectRealtime = true,
-				// SessionHandler = new SupabaseSessionHandler() <-- This must be implemented by the developer
-			};
-
-			// Note the creation as a singleton.
-			builder.Services.AddSingleton(provider => new Supabase.Client(url, key, options));
-
-
 			builder.Services.AddMauiBlazorWebView();
 
 #if DEBUG
